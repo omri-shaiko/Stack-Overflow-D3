@@ -24,14 +24,14 @@ module.exports = function(conf){
 
   app.use(require('connect-livereload')());
   app.set("views", conf.dir)
-  app.engine('jade', require('jade').__express);
+  app.engine('ejs', require('ejs').__express);
 
   app.get("/", function(req, res, next) {
     dir.paths(conf.dir, function(err,paths){
       if(err)
         res.send(500);
       var filtered_dirs = paths.dirs.filter(excluded_folders).map(relative_dirs);
-      res.render("../templates/index.jade", {dirs:filtered_dirs});
+      res.render("../templates/index.ejs", {dirs:filtered_dirs});
     })
   });
 
