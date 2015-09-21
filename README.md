@@ -8,5 +8,5 @@ In order to install run the following:
 npm install
 bower install
 gulp
-[Click Here](http://localhost:8080)
+Open http://localhost:8080
 ```
