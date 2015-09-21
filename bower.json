@@ -4,6 +4,7 @@
   "dependencies": {
     "d3": "~3.5.3",
     "bootstrap": "~3.3.5",
-    "angularjs": "~1.4.6"
+    "angularjs": "~1.4.6",
+    "lodash": "~3.10.1"
   }
 }
