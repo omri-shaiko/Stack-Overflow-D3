@@ -22,6 +22,21 @@
       </div>
       <button type="submit" class="btn btn-default">Search User</button>
     </form>
+
+    <article ng-show="user">
+      <section class="well">
+        <div class="row">
+          <div class="col-md-4">
+            {{user}}
+            <div><h3>{{user.display_name}}</h3></div>
+            <div><img src="{{user.profile_image}}" alt="Profile Image"/></div>
+          </div>
+          <div class="col-md-8">
+
+          </div>
+        </div>
+      </section>
+    </article>
   </div>
 
 </div> <!-- /container -->

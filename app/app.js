@@ -7,7 +7,9 @@ app.controller('UsersCtrl', function ($scope, StackApiResource) {
   $scope.searchUser = function (userName) {
     StackApiResource.getUserBasicInfo(userName)
       .then(function (res) {
-        $scope.user = res.data;
+
+        //Could be many users, i'm taking only the first here.
+        $scope.user = res.data.items[0];
       })
       .catch(function () {
         alert('Something wrong happen...');
