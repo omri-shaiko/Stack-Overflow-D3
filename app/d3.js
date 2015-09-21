@@ -16,7 +16,7 @@ function buildChart(id, fData){
 
   // function to handle histogram.
   function histoGram(fD){
-    var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
+    var hG={}, hGDim = {t: 60, r: 0, b: 30, l: 0};
     hGDim.w = 500 - hGDim.l - hGDim.r,
     hGDim.h = 300 - hGDim.t - hGDim.b;
 
@@ -54,7 +54,7 @@ function buildChart(id, fData){
     //Create the frequency labels above the rectangles.
     bars.append('text').text(function(d){ return d3.format('','')(d[1])})
       .attr('x', function(d) { return x(d[0])+x.rangeBand()/2; })
-      .attr('y', function(d) { return y(d[1])-5; })
+      .attr('y', function(d) {return y(d[1]) === 0 ? y(d[1])+20 : y(d[1])-5;})
       .attr('text-anchor', 'middle');
 
 
@@ -79,6 +79,8 @@ function buildChart(id, fData){
     }
     return hG;
   }
+
+  //Clean exist chart
   document.getElementById(id).innerHTML = '';
   histoGram(fData.map(function(d){return [d.name,d.value];}));
 }
