@@ -7,7 +7,7 @@
 </head>
 <body ng-app="stackD3">
 
-<div class="container" ng-controller="UsersCtrl">
+<div class="container" ng-controller="UsersCtrl" ng-cloak>
   <header>
     <h3 class="text-muted">StackOverflow D3</h3>
   </header>
@@ -27,12 +27,11 @@
       <section class="well">
         <div class="row">
           <div class="col-md-4">
-            {{user}}
             <div><h3>{{user.display_name}}</h3></div>
             <div><img src="{{user.profile_image}}" alt="Profile Image"/></div>
           </div>
           <div class="col-md-8">
-
+            <div id="d3-container"></div>
           </div>
         </div>
       </section>
@@ -44,5 +43,7 @@
 <script src="bower_components/angularjs/angular.min.js"></script>
 <script src="bower_components/d3/d3.min.js"></script>
 <script src="app.js"></script>
+<script src="d3.js"></script>
+
 </body>
 </html>

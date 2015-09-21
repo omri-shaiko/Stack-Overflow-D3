@@ -10,6 +10,14 @@ app.controller('UsersCtrl', function ($scope, StackApiResource) {
 
         //Could be many users, i'm taking only the first here.
         $scope.user = res.data.items[0];
+
+        var data = [
+          {name: 'bronze', value: 33},
+          {name: 'silver', value: 10},
+          {name: 'gold', value: 2}
+        ]
+
+        buildChart('d3-container',data);
       })
       .catch(function () {
         alert('Something wrong happen...');
@@ -31,7 +39,7 @@ app.factory('StackApiResource', function ($http) {
     filter: 'default'
   };
 
-  //Will turn an object into query string
+  //Will turn an object into a query string
   function serialize(obj) {
     var str = [];
     for (var p in obj) {
